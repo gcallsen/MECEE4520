@@ -1,0 +1,30 @@
+DELETE /recipe-index
+
+GET /recipe-index/_mapping
+
+GET recipe-index/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET recipe-index/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "ham",
+      "fields": ["ingredients"]
+    }
+  }
+}
+
+GET recipe-index/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "cheddar",
+      "fields": ["ingredients"]
+    }
+  }
+}
