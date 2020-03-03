@@ -44,4 +44,9 @@ Subsequently, you can run:
 
 Which will produce output similar to:
 
-    Prediction: category_1, Confidence: 0.9435
+    Attempting to classify text:
+        Classify Me!
+    ----------------------------
+    Prediction: apple
+    Confidence: 0.2127
+    ----------------------------
