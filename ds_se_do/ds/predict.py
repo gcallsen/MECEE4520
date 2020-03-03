@@ -14,10 +14,8 @@ def predict(text, vectorizer, logistic_regression):
     #
     categories = copy.copy(CLASSIFIER_CATEGORIES)
     random.shuffle(categories)
-    confidences = [0.9435, 0.6231, 0.8432, 0.2127]
-    random.shuffle(confidences)
     model_prediction = categories[0]
-    model_confidence = confidences[0]
+    model_confidence = round(random.random(), 4)
 
     return model_prediction, model_confidence
 
