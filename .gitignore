@@ -4,3 +4,5 @@ __pycache__
 
 tmp
 demo_namespace_*
+
+**/dist/*

@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: mecee4520
+  tag: latest
+  pullPolicy: Always
+
+env_vars:
+  - name: TEXT_TO_CLASSIFY
+    value: "Text From Helm Chart"
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

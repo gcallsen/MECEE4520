@@ -1,15 +1,17 @@
-from class_demo.constants import KEY_VECTORIZER, KEY_LOGISTIC_REGRESSION
+""" Basic demonstration of 'training' some classifier model.
+"""
 import random
 import pickle
+from ds.constants import KEY_VECTORIZER, KEY_LOGISTIC_REGRESSION, CLASSIFIER_CATEGORIES
 
 
 def train_model(training_data):
-    """ Train the model ...
+    """ Train the model
+
+        Review previous lectures for real-world examples.
     """
-
-    # See previous code for real-world example.
-
     # Train stuff ... using training_data ...
+    # These are clearly NOT functional models, they are just strings of text.
     vectorizer = 'my vectorizer'
     logistic_regression = 'my logistic regression model'
 
@@ -18,15 +20,19 @@ def train_model(training_data):
 
 def query_and_clean():
     """ Get documents for training/testing.
-    """
 
-    # Query database(s) and data store(s) for data.
+        Review previous lectures for real-world examples.
+    """
+    # Query database(s) and data store(s) for data ...
 
     # Clean up as necessary to get into useable state.
     cleaned_data = [
-        {'label': 'category_1', 'text': 'bar'},
-        {'label': 'category_1', 'text': 'baz'},
-        {'label': 'category_2', 'text': 'boo'},
+        {'label': CLASSIFIER_CATEGORIES[0], 'text': 'fuji'},
+        {'label': CLASSIFIER_CATEGORIES[0], 'text': 'golden delicious'},
+        {'label': CLASSIFIER_CATEGORIES[1], 'text': 'pepper jack'},
+        {'label': CLASSIFIER_CATEGORIES[1], 'text': 'swiss'},
+        {'label': CLASSIFIER_CATEGORIES[2], 'text': 'zebra'},
+        {'label': CLASSIFIER_CATEGORIES[2], 'text': 'lion'},
     ]
 
     # Could optionally save these cleaned data locally or in another data store
@@ -48,8 +54,9 @@ def load_data(limit=0, split=0.8):
 def main(output_dir='./'):
     """ Gather all training / testing data, train models, save trained models.
     """
-    print('Training model ...')
+    print('Training model ...\n')
     training_data = load_data(limit=1000)
+
     vectorizer, logistic_regression = train_model(training_data=training_data)
 
     pickled_vectorizer = pickle.dumps(vectorizer)
@@ -66,7 +73,6 @@ def main(output_dir='./'):
         print("Saving LR to {}".format(lr_path))
         with open(lr_path, 'wb') as f:
             f.write(pickled_logistic_regression)
-
 
 if __name__ == '__main__':
     main()

@@ -13,6 +13,12 @@ I look for / expect them to contribute to a product/team.
 
 ### The Data Scientist (`ds`)
 
+See `MECEE4530/ds_se_do/ds/README.md`
+
 ### The Software Engineer (`se`)
 
+See `MECEE4530/ds_se_do/se/README.md`
+
 ### The DevOps Engineer (`do`)
+
+See `MECEE4530/ds_se_do/do/README.md`

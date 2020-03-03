@@ -1,0 +1,6 @@
+version: '2'
+services:
+  worker:
+    image: mecee4520:latest
+    environment:
+      TEXT_TO_CLASSIFY: Classify Me!
